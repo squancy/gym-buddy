@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'consts/common_consts.dart';
 import 'forgot_password.dart';
+import 'main_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -15,10 +16,18 @@ class _LoginPageState extends State<LoginPage> {
   final FocusNode _emailFocusNode = FocusNode();
   final FocusNode _passwordFocusNode = FocusNode();
 
-  void _login() {
+  void _login(BuildContext context) {
     final String email = _emailController.text;
     final String password = _passwordController.text;
+
+    // Kinyomtatja az emailt és a jelszót a konzolra
     print('Email: $email, Password: $password');
+
+    // Átnavigálunk a main_page.dart oldalon található MainPage-re
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => MainPage()),
+    );
   }
 
   @override
@@ -65,7 +74,9 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(height: 20),
                 FilledButton(
-                  onPressed: _login,
+                  onPressed: () {
+                    _login(context); // Itt adjuk át a context-et a _login függvénynek
+                  },
                   child: const Text(LoginConsts.appBarText),
                 ),
                 const SizedBox(height: 30),
