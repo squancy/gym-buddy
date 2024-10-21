@@ -28,38 +28,40 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
       appBar: AppBar(
         title: const Text(ForgotPasswordConsts.appBarText),
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              Text(
-                ForgotPasswordConsts.mainScreenText,
-                style: TextStyle(
-                  fontSize: 28,
-                  color: Theme.of(context).colorScheme.primary,
-                  fontWeight: FontWeight.bold,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Text(
+                  ForgotPasswordConsts.mainScreenText,
+                  style: TextStyle(
+                    fontSize: 28,
+                    color: Theme.of(context).colorScheme.primary,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 30,),
-              Text(
-                ForgotPasswordConsts.infoText,
-                style: TextStyle(color: Theme.of(context).colorScheme.onPrimary)
-              ),
-              const SizedBox(height: 30,),
-              TextField(
-                controller: _emailController,
-                focusNode: _emailFocusNode,
-                decoration: const InputDecoration(labelText: 'Email'),
-                keyboardType: TextInputType.emailAddress,
-              ),
-              const SizedBox(height: 20),
-              FilledButton(
-                onPressed: _sendPassword,
-                child: const Text(ForgotPasswordConsts.redBtnText),
-              ),
-            ],
+                const SizedBox(height: 30,),
+                Text(
+                  ForgotPasswordConsts.infoText,
+                  style: TextStyle(color: Theme.of(context).colorScheme.onPrimary)
+                ),
+                const SizedBox(height: 30,),
+                TextField(
+                  controller: _emailController,
+                  focusNode: _emailFocusNode,
+                  decoration: const InputDecoration(labelText: 'Email'),
+                  keyboardType: TextInputType.emailAddress,
+                ),
+                const SizedBox(height: 20),
+                FilledButton(
+                  onPressed: _sendPassword,
+                  child: const Text(ForgotPasswordConsts.redBtnText),
+                ),
+              ],
+            ),
           ),
         ),
       ),

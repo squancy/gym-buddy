@@ -3,7 +3,6 @@ import 'theme.dart';
 import 'login_page.dart';
 import 'signup_page.dart';
 import 'consts/common_consts.dart';
-import 'forgot_password.dart';
 
 void main() {
   runApp(const GymBuddyApp());

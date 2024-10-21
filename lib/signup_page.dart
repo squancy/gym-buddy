@@ -46,49 +46,51 @@ class _SignupPageState extends State<SignupPage> {
       appBar: AppBar(
         title: const Text(SignupConsts.appBarText),
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              Text(
-                SignupConsts.mainScreenText,
-                style: TextStyle(
-                  fontSize: 28,
-                  color: Theme.of(context).colorScheme.primary,
-                  fontWeight: FontWeight.bold,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Text(
+                  SignupConsts.mainScreenText,
+                  style: TextStyle(
+                    fontSize: 28,
+                    color: Theme.of(context).colorScheme.primary,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              TextField(
-                controller: _usernameController,
-                focusNode: _usernameFocusNode,
-                decoration: const InputDecoration(labelText: 'Username'),
-              ),
-              TextField(
-                controller: _emailController,
-                focusNode: _emailFocusNode,
-                decoration: const InputDecoration(labelText: 'Email'),
-                keyboardType: TextInputType.emailAddress,
-              ),
-              TextField(
-                controller: _passwordController,
-                focusNode: _passwordFocusNode,
-                decoration: const InputDecoration(labelText: 'Password'),
-                obscureText: true,
-              ),
-              TextField(
-                controller: _passwordConfController,
-                focusNode: _passwordConfFocusNode,
-                decoration: const InputDecoration(labelText: 'Confirm password'),
-                obscureText: true,
-              ),
-              const SizedBox(height: 20),
-              FilledButton(
-                onPressed: _signup,
-                child: const Text(SignupConsts.appBarText),
-              ),
-            ],
+                TextField(
+                  controller: _usernameController,
+                  focusNode: _usernameFocusNode,
+                  decoration: const InputDecoration(labelText: 'Username'),
+                ),
+                TextField(
+                  controller: _emailController,
+                  focusNode: _emailFocusNode,
+                  decoration: const InputDecoration(labelText: 'Email'),
+                  keyboardType: TextInputType.emailAddress,
+                ),
+                TextField(
+                  controller: _passwordController,
+                  focusNode: _passwordFocusNode,
+                  decoration: const InputDecoration(labelText: 'Password'),
+                  obscureText: true,
+                ),
+                TextField(
+                  controller: _passwordConfController,
+                  focusNode: _passwordConfFocusNode,
+                  decoration: const InputDecoration(labelText: 'Confirm password'),
+                  obscureText: true,
+                ),
+                const SizedBox(height: 20),
+                FilledButton(
+                  onPressed: _signup,
+                  child: const Text(SignupConsts.appBarText),
+                ),
+              ],
+            ),
           ),
         ),
       ),
